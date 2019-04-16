@@ -3,6 +3,7 @@ new Vue({
     data: {
         budgets: [
             {
+            test: 50 + "%",
             name: "Groceries",
             target: "80000",
             transactions: [
@@ -105,6 +106,11 @@ new Vue({
         },
         percentBudget(spent, budget) {
             return `${Math.round((spent / budget) * 100)}%`
-        }
+        },
+        budgetBarWidth(spent, budget) {
+            if (budget > spent) {
+                return `${Math.round((spent / budget) * 100)}%`;
+            } else { return "100%"}
+        },
     }
 });

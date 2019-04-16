@@ -12,22 +12,23 @@
 <body class="med-font">
     <div class="site-container">
 
-        <div class="header">
+        <div class="header-box">
             <div class="logo-box">
                 <img src="assets/logo.png" alt="Savify Logo">
                 <div class="logo-text">savify</div>
             </div>
+            <div class="header">
+                <h1 class="page-title">Overview</h1>
 
-            <h1 class="page-title">Overview</h1>
-
-            <div class="view-slider-wrapper med-font">
-                <p class="slide-opLft">Budget</p>
-                <p class="slide-opRt">Transactions</p>
-                <div class="slider-track"></div>
-                <div class="slider"></div>
+                <div class="view-slider-wrapper med-font">
+                    <p class="slide-opLft">Budget</p>
+                    <p class="slide-opRt">Transactions</p>
+                    <div class="slider-track"></div>
+                    <div class="slider"></div>
+                </div>
+    
+                <p class="date sm-font">Mar. 2019<i class="fas fa-caret-down"></i></p>
             </div>
-
-            <p class="date sm-font">Mar. 2019<i class="fas fa-caret-down"></i></p>
         </div>
         
 
@@ -39,7 +40,7 @@
                     <img v-bind:src="'assets/' + budget.name + '.png'" alt="icon">
                 </div>
         
-                <div class="cardContent">
+                <div class="card-content">
         
                     <div class="card-left">
                         <p class="card-title">{{ budget.name }}</p>
@@ -51,7 +52,10 @@
                         <p class="subtext vsm-font">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
                     </div>
         
-                    <div class="bar">============--------------</div>
+                    <div class="budget-bar">
+                        <div class="total-bar"></div>
+                        <div :style="{ width: budgetBarWidth(transactionTotal(budget.transactions), budget.target) }" class="used-bar"></div>
+                    </div>
         
                 </div>
 
@@ -60,7 +64,7 @@
         </div>
 
         <div class="footer">
-            
+
             <div class="logo-box">
                     <img src="assets/logo.png" alt="Savify Logo">
                     <div class="logo-text">savify</div>
