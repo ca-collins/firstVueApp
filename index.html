@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>First Vue App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="site-container">
+
+        <div class="header">
+            <div class="logo-box">
+                <img src="assets/logo.png" alt="Savify Logo">
+                <p class="logo-text">savify</p>
+            </div>
+
+            <h1 class="page-title">Overview</h1>
+
+            <div class="view-slider-wrapper">
+                <p class="slide-opLft">Budget</p>
+                <p class="slide-opRt">Transactions</p>
+                <div class="slider-track"></div>
+                <div class="slider"></div>
+            </div>
+
+            <p class="date">March <i class="fas fa-caret-down"></i></p>
+        </div>
+        
+
+        <div id="budgetCards">
+
+            <div v-for="budget in budgets" class="cat-card">
+    
+                <div class="cardIcon">
+                    <img v-bind:src="'assets/' + budget.name + '.png'" alt="icon">
+                </div>
+        
+                <div class="cardContent">
+        
+                    <div class="left">
+                        <p class="cat-title">{{ budget.name }}</p>
+                        <p class="subtext">{{ budget.transactions.length }} transactions</p>
+                        <p></p>
+                    </div>
+        
+                    <div class="right">
+                        <p >{{centsToDollars(transactionTotal(budget.transactions))}} / {{ centsToDollars(budget.target) }}</p>
+                        <p class="subtext">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
+                    </div>
+        
+                    <div class="bar">============--------------</div>
+        
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+
+            <div class="logo-box">
+                
+                <div class="logo-text">
+                    <img src="assets/logo.png" alt="Savify Logo">
+                    <p>savify</p>
+                </div>
+            </div>
+
+            <p>(C) 2019 Savify. All Rights Reserved</p>
+             
+        </div>
+
+    </div>
+        
+
+    
+    <!-- Development Vue CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Production Vue CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+    <script src="index.js"></script>
+    
+</body>
+
+</html>
