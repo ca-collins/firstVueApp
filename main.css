@@ -1,15 +1,21 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: sans-serif;
-}
-
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+    min-height: 100vh;
+}
+
+.site-container {
+    font-family: sans-serif;
+    color: #323b65;
+}
+
+
 
 .header, .footer {
   background-image: linear-gradient(-180deg, #8E2DE2 0%, #4A00E0 100%);
@@ -17,25 +23,49 @@ body {
 
 }
 
+.vsm-font {
+    font-size: .65rem;
+}
+.sm-font {
+    font-size: .70rem;
+}
+.med-font {
+    font-size: .8rem;
+}
+
+.highlight-text {
+    color: #8E2DE2;
+}
+
 .header {
-    display: grid;
-    width: 100%;
+    /* display: grid; */
+    /* width: 100%; */
     /* grid-template: "a a a" auto; */
 }
 
+.logo-box {
+    display: flex;
+    align-items: center;
+}   
+
 .logo-text {
+    margin-left: .25rem;
+    font-weight: bold;
     display: inline-block;
-    margin: 0;
 }
 
+.page-title {
+    font-size: 1.25rem;
+    font-weight: normal;
+}
 
 /* SLIDER STYLES */
 .view-slider-wrapper {
     display: grid;
     background-color: ;
-    width: 100%;
-    grid-template-rows: auto;
-    grid-template-columns: 100px 100px; 
+    width: fit-content;
+    grid-template-rows: 23px;
+    grid-template-columns: 110px 110px;
 }
 
 .view-slider-wrapper>* {
@@ -45,32 +75,62 @@ body {
 
 .view-slider-wrapper>p {
     z-index: 2;
-    color: gray;
-    margin: .5rem .75rem;
-    font-size: .75rem;
+    align-self: center;
+    justify-self: center;
 }
 
 .slide-opLft {
     grid-column: 1 / 2;
+    color: #4A00E0;
 }
 
 .slide-opRt {
+    color: white;
     grid-column: 2 / -1;
-    text-align: right;
 }
 
 .slider-track {
-    background: rgba(76,76,76,1);
-
-    border-radius: 35px;
+    background: rgba(255, 255, 255, .25);
+    opacity: 100%;
+    border-radius: 14px;
 }
 
 .slider {
     background-color: white;
     z-index: 1;
     grid-column: 1 / 2;
-    border-radius: 35px;
+    border-radius: 14px;
     -webkit-box-shadow: 10px 5px 15px -13px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 5px 15px -13px rgba(0,0,0,0.75);
     box-shadow: 10px 5px 15px -13px rgba(0,0,0,0.75);
+}
+
+/* END SLIDER STYLES */
+
+.date i {
+    margin-left: .85rem;
+}
+
+/*  CARD STYLES */
+
+.subtext {
+    color: #babecb;
+}
+
+.card-icon {
+    background: #f3f4f9;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px; 
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.footer {
+    display: grid;
+    justify-items: center;
+    /* align-content: center; */
 }

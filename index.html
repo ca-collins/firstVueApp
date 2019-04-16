@@ -9,25 +9,25 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="med-font">
     <div class="site-container">
 
         <div class="header">
             <div class="logo-box">
                 <img src="assets/logo.png" alt="Savify Logo">
-                <p class="logo-text">savify</p>
+                <div class="logo-text">savify</div>
             </div>
 
             <h1 class="page-title">Overview</h1>
 
-            <div class="view-slider-wrapper">
+            <div class="view-slider-wrapper med-font">
                 <p class="slide-opLft">Budget</p>
                 <p class="slide-opRt">Transactions</p>
                 <div class="slider-track"></div>
                 <div class="slider"></div>
             </div>
 
-            <p class="date">March <i class="fas fa-caret-down"></i></p>
+            <p class="date sm-font">Mar. 2019<i class="fas fa-caret-down"></i></p>
         </div>
         
 
@@ -35,21 +35,20 @@
 
             <div v-for="budget in budgets" class="cat-card">
     
-                <div class="cardIcon">
+                <div class="card-icon">
                     <img v-bind:src="'assets/' + budget.name + '.png'" alt="icon">
                 </div>
         
                 <div class="cardContent">
         
-                    <div class="left">
-                        <p class="cat-title">{{ budget.name }}</p>
-                        <p class="subtext">{{ budget.transactions.length }} transactions</p>
-                        <p></p>
+                    <div class="card-left">
+                        <p class="card-title">{{ budget.name }}</p>
+                        <p class="subtext vsm-font">{{ budget.transactions.length }} transactions</p>
                     </div>
         
-                    <div class="right">
-                        <p >{{centsToDollars(transactionTotal(budget.transactions))}} / {{ centsToDollars(budget.target) }}</p>
-                        <p class="subtext">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
+                    <div class="card-right">
+                        <p class="sm-font">{{centsToDollars(transactionTotal(budget.transactions))}} / <span class="highlight-text"> {{ centsToDollars(budget.target) }} </span></p>
+                        <p class="subtext vsm-font">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
                     </div>
         
                     <div class="bar">============--------------</div>
@@ -61,16 +60,13 @@
         </div>
 
         <div class="footer">
-
+            
             <div class="logo-box">
-                
-                <div class="logo-text">
                     <img src="assets/logo.png" alt="Savify Logo">
-                    <p>savify</p>
-                </div>
+                    <div class="logo-text">savify</div>
             </div>
-
-            <p>(C) 2019 Savify. All Rights Reserved</p>
+        
+            <p class="vsm-font subtext">(C) 2019 Savify. All Rights Reserved</p>
              
         </div>
 
