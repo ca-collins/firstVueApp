@@ -3,7 +3,6 @@ new Vue({
     data: {
         budgets: [
             {
-            test: 50 + "%",
             name: "Groceries",
             target: "80000",
             transactions: [

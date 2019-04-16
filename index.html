@@ -11,7 +11,7 @@
 
 <body class="med-font">
     <div class="site-container">
-
+        
         <div class="header-box">
             <div class="logo-box">
                 <img src="assets/logo.png" alt="Savify Logo">
@@ -42,15 +42,11 @@
         
                 <div class="card-content">
         
-                    <div class="card-left">
-                        <p class="card-title">{{ budget.name }}</p>
-                        <p class="subtext vsm-font">{{ budget.transactions.length }} transactions</p>
-                    </div>
-        
-                    <div class="card-right">
-                        <p class="sm-font">{{centsToDollars(transactionTotal(budget.transactions))}} / <span class="highlight-text"> {{ centsToDollars(budget.target) }} </span></p>
-                        <p class="subtext vsm-font">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
-                    </div>
+                    <p class="card-title">{{ budget.name }}</p>
+                    <p class="sm-font card-right budget-dollar-text">{{centsToDollars(transactionTotal(budget.transactions))}} / <span class="highlight-text"> {{ centsToDollars(budget.target) }} </span></p>
+
+                    <p class="subtext vsm-font">{{ budget.transactions.length }} transactions</p>  
+                    <p class="subtext vsm-font  card-right">{{percentBudget(transactionTotal(budget.transactions), budget.target)}} of budget</p>
         
                     <div class="budget-bar">
                         <div class="total-bar"></div>
@@ -70,7 +66,7 @@
                     <div class="logo-text">savify</div>
             </div>
         
-            <p class="vsm-font subtext">(C) 2019 Savify. All Rights Reserved</p>
+            <p class="vsm-font subtext"><i class="far fa-copyright"></i> 2019 Savify. All Rights Reserved</p>
              
         </div>
 
