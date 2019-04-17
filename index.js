@@ -1,6 +1,7 @@
 new Vue({
     el: '#budgetCards', 
     data: {
+        hidden: true,
         budgets: [
             {
             name: "Groceries",
