@@ -4,7 +4,7 @@ new Vue({
         hidden: true,
         budgets: [
             {
-            name: "Groceries",
+            name: "Test",
             target: "80000",
             transactions: [
             {
